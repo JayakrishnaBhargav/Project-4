@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio - AutoCAD Designer</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    html, body {
+      height: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f4f7f9;
+      color: #333;
+    }
+    body {
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      background: #1e2a38;
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin-bottom: 10px;
+      font-size: 3em;
+    }
+    header p {
+      font-size: 1.2em;
+    }
+    main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px;
+    }
+    .portfolio-container {
+      width: 100%;
+      max-width: 1200px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+    .portfolio-item {
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+    }
+    .portfolio-item:hover {
+      transform: translateY(-8px);
+    }
+    .portfolio-image {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+    .portfolio-content {
+      padding: 20px;
+    }
+    .portfolio-title {
+      font-size: 1.6em;
+      margin-bottom: 10px;
+      color: #1e2a38;
+    }
+    .portfolio-description {
+      font-size: 1em;
+      color: #555;
+    }
+    footer {
+      background: #1e2a38;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>My AutoCAD Design Portfolio</h1>
+    <p>Explore my best architectural and mechanical CAD projects</p>
+  </header>
+
+  <main>
+    <div class="portfolio-container">
+      <div class="portfolio-item">
+        <img class="portfolio-image" src="1.jpg" alt="House Plan">
+        <div class="portfolio-content">
+          <h2 class="portfolio-title">Modern House Plan</h2>
+          <p class="portfolio-description">2D residential floor plan showcasing smart layouts and creative space usage.</p>
+        </div>
+      </div>
+
+      <div class="portfolio-item">
+        <img class="portfolio-image" src="2.jpg" alt="Industrial Layout">
+        <div class="portfolio-content">
+          <h2 class="portfolio-title">Industrial Floor Layout</h2>
+          <p class="portfolio-description">AutoCAD blueprint for manufacturing unit with zoning and flow planning.</p>
+        </div>
+      </div>
+
+      <div class="portfolio-item">
+        <img class="portfolio-image" src="3.jpeg" alt="Interior Rendering">
+        <div class="portfolio-content">
+          <h2 class="portfolio-title">Interior 3D Rendering</h2>
+          <p class="portfolio-description">Realistic 3D render of a stylish living room using AutoCAD and rendering tools.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 AutoCAD Designer. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,216 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Full Page Layout */
+html, body {
+  height: 100%;
+  margin: 0;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+/* Container for consistent width */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header Styling */
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+  position: relative;
+  z-index: 10;
+}
+
+header h1 {
+  text-align: center;
+  font-size: 2.5em;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1; /* Ensures the links take up available space and are centered */
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 1.2em;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+nav a:hover {
+  background-color: #f39c12;
+}
+
+/* Logout Button Styling */
+.logout-btn {
+  background-color: #e74c3c;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1.1em;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.logout-btn:hover {
+  background-color: #c0392b;
+}
+
+/* Home Section - Full Height */
+.home-section {
+  background: linear-gradient(to right, #3498db, #2980b9); /* Changed to blue gradient */
+  color: #fff;
+  height: calc(100vh - 140px); /* Adjust height to take full screen minus header and footer */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.home-section h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.home-section p {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+  max-width: 800px;
+}
+
+/* Call to Action Button */
+.cta-button {
+  background-color: #e74c3c;
+  color: white;
+  padding: 15px 30px;
+  font-size: 1.2em;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+  background-color: blueviolet;
+}
+
+/* Footer Styling */
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  html, body {
+    font-size: 14px; /* Adjust base font size for mobile */
+  }
+
+  /* Header */
+  header h1 {
+    font-size: 1.8em;
+  }
+
+  nav {
+    flex-direction: column;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav a {
+    margin: 10px 0;
+    font-size: 1em;
+  }
+
+  /* Logout Button */
+  .logout-btn {
+    margin-top: 10px;
+    font-size: 1em;
+  }
+
+  /* Home Section */
+  .home-section {
+    height: auto; /* Adjust height for mobile screens */
+    padding: 20px;
+  }
+
+  .home-section h2 {
+    font-size: 2em;
+  }
+
+  .home-section p {
+    font-size: 1.1em;
+  }
+
+  /* Call to Action Button */
+  .cta-button {
+    font-size: 1.1em;
+    padding: 12px 25px;
+  }
+
+  /* Footer */
+  footer {
+    font-size: 0.9em;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Further adjustments for very small screens */
+  header h1 {
+    font-size: 1.5em;
+  }
+
+  nav a {
+    font-size: 0.9em;
+  }
+
+  .home-section h2 {
+    font-size: 1.8em;
+  }
+
+  .home-section p {
+    font-size: 1em;
+  }
+
+  .cta-button {
+    font-size: 1em;
+    padding: 10px 20px;
+  }
+
+  .logout-btn {
+    padding: 8px 18px;
+    font-size: 0.9em;
+  }
+}

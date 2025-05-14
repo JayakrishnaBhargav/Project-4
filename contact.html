@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us - AutoCAD Design</title>
+  <style>
+    /* Global Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #ff7f50, #ff5722); /* Gradient background */
+      color: #333;
+      padding: 0 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: white;
+      margin-bottom: 20px;
+    }
+
+    /* Form Container */
+    .container {
+      background: #fff;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+      width: 100%;
+    }
+
+    label {
+      font-size: 1rem;
+      color: #555;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    input[type="text"], input[type="email"], textarea {
+      width: 100%;
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+      font-size: 1rem;
+      background-color: #f9f9f9;
+      transition: all 0.3s ease;
+    }
+
+    input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
+      border-color: #ff5722;
+      background-color: #fff;
+      outline: none;
+    }
+
+    textarea {
+      height: 150px;
+      resize: vertical;
+    }
+
+    input[type="submit"] {
+      width: 100%;
+      background-color: #ff5722;
+      color: white;
+      padding: 15px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #ff7f50;
+    }
+
+    .message {
+      margin-top: 20px;
+      font-size: 1rem;
+    }
+
+    .success {
+      color: green;
+    }
+
+    .error {
+      color: red;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      .container {
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      input[type="submit"] {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Contact Us</h1>
+    <form id="contact-form" action="https://formspree.io/f/xdkgpble" method="POST">
+
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+          
+            <label for="email">Your Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+          
+            <label for="message">Your Message</label>
+            <textarea id="message" name="message" placeholder="Write your message here..." rows="6" required></textarea>
+          
+            <input type="submit" value="Send Message">
+          </form>
+    <div id="form-response" class="message"></div>
+  </div>
+
+  <script>
+    // Handle form submission with AJAX
+    document.getElementById("contact-form").addEventListener("submit", function(e) {
+      e.preventDefault(); // Prevent the default form submission
+  
+      var name = document.getElementById("name").value;
+      var email = document.getElementById("email").value;
+      var message = document.getElementById("message").value;
+  
+      // Validate fields
+      if (!name || !email || !message) {
+        document.getElementById("form-response").innerHTML = "<p class='error'>All fields are required!</p>";
+        return;
+      }
+  
+      var formData = new FormData(this);
+  
+      // Send the form data via Fetch API
+      fetch(this.action, {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => {
+        if (response.ok) {
+          // If response is ok, display success message
+          document.getElementById("form-response").innerHTML = "<p class='success'>Your message has been sent successfully!</p>";
+          document.getElementById("contact-form").reset(); // Reset the form
+          // Redirect to the home page after 3 seconds
+          setTimeout(function() {
+            window.location.href = "index.html"; // Replace with your home page URL
+          }, 3000); // 3 seconds delay
+        } else {
+          // If there is an error in submission, display the error message
+          document.getElementById("form-response").innerHTML = "<p class='error'>There was an issue with your submission. Please try again later.</p>";
+        }
+      })
+      .catch(error => {
+        // If there is a network error or any other issue, show a generic error message
+        document.getElementById("form-response").innerHTML = "<p class='error'>An error occurred. Please try again later.</p>";
+      });setTimeout(function() {
+            window.location.href = "index.html"; // Replace with your home page URL
+          }, 3000);
+    });
+  </script>
+</body>
+</html>
